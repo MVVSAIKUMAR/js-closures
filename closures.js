@@ -43,18 +43,37 @@ var x = (function () {
 x();
 var globalVar = ""xyz"";
 
-(function outerFunc(outerArg) {
-    var outerVar = 'a';
-    
-    (function innerFunc(innerArg) {
-    var innerVar = 'b';
-    
-    console.log(
-        ""outerArg = "" + outerArg + ""\n"" +
-        ""innerArg = "" + innerArg + ""\n"" +
-        ""outerVar = "" + outerVar + ""\n"" +
-        ""innerVar = "" + innerVar + ""\n"" +
-        ""globalVar = "" + globalVar);
-    
-    })(456);
-})(123);
+//   Write a code to calculate area of a rectangle using inner function. In this case outer function should accept parameter length and inner function should accept parameter breadth.
+
+ function OuterFunction() {
+
+    var  length= 20;
+
+    function InnerFunction() {
+        var width=10;
+        var area;
+        console.log(area=length*width);
+    }
+
+    return InnerFunction;
+ }
+ var innerFunc = OuterFunction();
+
+ innerFunc(); 
+
+//Take a variable in outer function and create an inner function to increase the counter every time it is called
+function Outerfunc(){
+    let count=0;
+    return function Innerfunc(){
+     return count++;
+    }
+}
+let getFunction=Outerfunc();
+console.log(getFunction());
+console.log(getFunction());
+console.log(getFunction());
+console.log(getFunction());
+console.log(getFunction());
+console.log(getFunction());
+console.log(getFunction());
+console.log(getFunction());
